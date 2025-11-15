@@ -17,7 +17,7 @@ This project captures and analyzes network traffic from a personal lab network u
 4. Saved screenshots and documented key observations in `report.pdf`.
 
 ## Key findings (summary)
-- DNS: Observed standard DNS queries and responses; domain `example.com` resolved to 93.184.216.34.
+- DNS: Observed standard DNS queries and responses; domain `www.iana.org` resolved to 192.0.33.8.
 - HTTP: Observed an HTTP GET request and 200 OK response from local test server; headers visible in HTTP stream.
 - ARP: Observed ARP request and reply showing mapping of IP to MAC address on the LAN.
 
