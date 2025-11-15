@@ -1,0 +1,54 @@
+# Wireshark Display Filters Used in This Project
+
+# -------------------------------
+# DNS (Domain Name System)
+# -------------------------------
+dns
+dns.flags.response == 0          # DNS queries
+dns.flags.response == 1          # DNS responses
+dns.qry.name == "www.iana.org"   # DNS query 
+
+# -------------------------------
+# HTTP Traffic
+# -------------------------------
+http
+http.request                     # HTTP requests (e.g., GET, POST)
+http.response                    # HTTP responses (200 OK, etc.)
+tcp.port == 8000                 # Local Python HTTP server on port 8000
+
+# -------------------------------
+# TCP Handshake / Connection Details
+# -------------------------------
+tcp.flags.syn == 1 and tcp.flags.ack == 0   # SYN
+tcp.flags.syn == 1 and tcp.flags.ack == 1   # SYN-ACK
+tcp.flags.ack == 1 and tcp.len == 0         # Final ACK of handshake
+tcp.stream == 0                             # Follow specific TCP stream
+
+# -------------------------------
+# ICMP (Ping)
+# -------------------------------
+icmp
+icmp.type == 8    # Echo Request
+icmp.type == 0    # Echo Reply
+
+# -------------------------------
+# ARP (Address Resolution Protocol)
+# -------------------------------
+arp
+arp.opcode == 1   # ARP Request ("Who has ...?")
+arp.opcode == 2   # ARP Reply ("... is at ...")
+
+# -------------------------------
+# IP Filters
+# -------------------------------
+ip.addr == 10.10.223.254         # Router IP
+ip.addr == 192.168.56.1          # IPv4
+
+# -------------------------------
+# Useful General Filters
+# -------------------------------
+tcp
+udp
+eth
+frame contains "HTTP"            # Raw text search in frames
+frame.number >= 1                # Show packets from #1 onward
