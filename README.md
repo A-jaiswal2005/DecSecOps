@@ -9,7 +9,6 @@ This project captures and analyzes network traffic from a personal lab network u
 - `report.pdf` — one-page summary of findings (PDF for upload)
 - `filters.txt` — useful Wireshark display filters used in the analysis
 - `screenshots/` — screenshots: DNS query, HTTP stream, ARP request/reply
-- `capture.pcapng` (optional) — raw packet capture file (if included)
 
 ## Steps performed
 1. Installed Wireshark with Npcap (admin-only, 802.11 monitor mode, WinPcap compat enabled).
