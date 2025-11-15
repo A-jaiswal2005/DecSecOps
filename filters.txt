@@ -48,7 +48,8 @@ ip.addr == 192.168.56.1          # IPv4
 # Useful General Filters
 # -------------------------------
 tcp
-udp
-eth
+http
+arp
 frame contains "HTTP"            # Raw text search in frames
 frame.number >= 1                # Show packets from #1 onward
+
